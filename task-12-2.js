@@ -32,14 +32,16 @@ function changeHash(event) {
         startTime: timeInSec
     };
 
-    var arrhistoryInfo = [];
-    arrhistoryInfo.push(historyInfo);
+    // var prevHistoryInfo = JSON.parse(localStorage['history']);
+
+    var arrHistoryInfo = [];
+    arrHistoryInfo.push(historyInfo);
+    // arrHistoryInfo.push(prevHistoryInfo);
 
     localStorage.setItem(
         'history',
-        JSON.stringify(arrhistoryInfo)
+        JSON.stringify(arrHistoryInfo)
     );
-    console.log('hash was changed');
 }
 
 window.addEventListener('hashchange', changeHash());
