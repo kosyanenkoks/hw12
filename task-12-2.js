@@ -24,18 +24,13 @@ function changeHash(event) {
         pageId: newHash,
         startTime: timeInSec
     };
-    var arr = [];
 
-    arr.push(JSON.stringify(historyInfo));
-    console.log(arr);
-
-    arr.forEach(item => {
-
-    });
+    var arrhistoryInfo = [];
+    arrhistoryInfo.push(historyInfo);
 
     localStorage.setItem(
         'history',
-        arr
+        JSON.stringify(arrhistoryInfo)
     );
     changeUrlImg();
     console.log('hash was changed');
