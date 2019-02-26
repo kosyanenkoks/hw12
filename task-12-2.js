@@ -19,11 +19,6 @@ function changeUrlImg() {
         });
 }
 
-// спасение
-window.onpopstate = function(event) {
-    changeUrlImg();
-};
-
 function changeHash(event) {
     var newHash = location.hash;
     var timeInSec = Math.floor(Date.now() / 1000);
@@ -44,4 +39,5 @@ function changeHash(event) {
     );
 }
 
-window.addEventListener('hashchange', changeHash());
+window.addEventListener('popstate', changeUrlImg);
+window.addEventListener('hashchange', changeHash);
